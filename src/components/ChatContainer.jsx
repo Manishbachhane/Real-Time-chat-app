@@ -18,6 +18,7 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
         <img src={assets.profile_martin} alt="" className="w-8 rounded-full" />
         <p className="flex-1 text-lg text-white flex items-center gap-2">
           Martin Smith
+          {/* --------online------- dot */}
           <span className="rounded-full w-2 h-2 bg-green-400 animate-pulse"></span>
         </p>
         <img
@@ -84,6 +85,26 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
           );
         })}
         <div ref={scrollEnd}></div>
+      </div>
+
+      {/* bottom input area... */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 flex items-center gap-3  backdrop-blur-md border-t border-stone-600">
+        <div className="flex-1 flex items-center bg-gray-100/12 px-3 rounded-full">
+          <input
+            type="text"
+            placeholder="send a message"
+            className="flex-1 text-sm p-3  border-none rounded-lg outline-none text-white placeholder-gray-400"
+          />
+          <input type="file" id="image" accept="image/png,image/jpeg" hidden />
+          <label htmlFor="image">
+            <img
+              src={assets.gallery_icon}
+              alt="gallery"
+              className="w-5 mr-2 cursor-pointer"
+            />
+          </label>
+        </div>
+        <img src={assets.send_button} alt="" className="w-7 cursor-pointer" />
       </div>
     </div>
   ) : (
